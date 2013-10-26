@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   
-  PARTY_START_TIME=12
+  PARTY_START_TIME=16
   
   def votes
     previous_winner = Array.new(Game.all.size+Game.first.id,DateTime.new(2013,10,26,PARTY_START_TIME,0,0,"-4"))
