@@ -1,3 +1,9 @@
+<% @events.each do |event| %>
+<div>
+	<%=event.name%>: <%=event.description%>
+</div>
+<% end %>
+
 <%= form_for([@game,@game.scores.build]) do |f| %>
 	  <div>
 		Cast your vote: <%= f.collection_select :event, @events, :id, :name %>

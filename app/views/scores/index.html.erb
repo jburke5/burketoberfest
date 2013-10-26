@@ -1,1 +1,3 @@
-<h1>Scores for <%= @game.name%></h1>
+<h1>Scores for <%= @game.name%> (all scores actually)</h1>
+
+<%= render partial: 'score', collection: @scores%>

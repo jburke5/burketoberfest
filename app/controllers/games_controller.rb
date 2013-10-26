@@ -24,13 +24,13 @@ class GamesController < ApplicationController
   def new_win
     @game = Game.find(params[:game_id])
     @rank = 1
-    @events = Event.find_all_by_time(4)
+    @events = Event.find_all_by_next_event
   end
   
   def new_loss
     @game = Game.find(params[:game_id])
     @rank = 2
-    @events = Event.find_all_by_time(4)
+    @events = Event.find_all_by_next_event
   end
   
   # POST /games

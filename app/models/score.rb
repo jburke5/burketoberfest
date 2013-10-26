@@ -13,7 +13,7 @@ class Score < ActiveRecord::Base
   end
   
   def points_since(last_time)
-    return minutes_since(last_time)*WIN_FACTOR if rank==1
+    return minutes_since(last_time)*WIN_FACTOR if winner?
     minutes_since(last_time)*LOSE_FACTOR
   end
   
@@ -22,7 +22,11 @@ class Score < ActiveRecord::Base
   end
   
   def result
-    return "Won" if rank==1
+    return "Won" if winner?
     "Lost"
+  end
+  
+  def winner?
+    rank==1
   end
 end
