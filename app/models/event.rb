@@ -23,13 +23,13 @@ class Event < ActiveRecord::Base
   end
   
   def self.next_event_hour
-    hour = Time.now.hour
-    return hour+2 if hour%2==0
-    hour+1
+    Time.now.hour
   end
   
   def self.find_all_by_next_event
     hour = (next_event_hour + 12) % 24
-    Event.find_all_by_time(hour)
+    events = Event.find(:all, :conditions => ["time > ?", hour], :order => "time ASC")
+    next_time = events.first.time
+    events.select{ |event| event.time == next_time}
   end
 end
