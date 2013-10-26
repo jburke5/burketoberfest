@@ -31,5 +31,6 @@ class Event < ActiveRecord::Base
     events = Event.find(:all, :conditions => ["time > ?", hour], :order => "time ASC")
     next_time = events.first.time
     events.select{ |event| event.time == next_time}
+    Event.all
   end
 end
