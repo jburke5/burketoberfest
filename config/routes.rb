@@ -1,6 +1,12 @@
 Burketoberfest::Application.routes.draw do
   
+  resources :events do
+  end
+  get 'events/next/:time', to: 'events#next'
+
   resources :games do
+    get :new_win
+    get :new_loss
     resources :scores
   end
   # The priority is based upon order of creation: first created -> highest priority.

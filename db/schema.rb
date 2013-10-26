@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023035147) do
+ActiveRecord::Schema.define(version: 20131026145442) do
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.integer  "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "games", force: true do |t|
     t.string   "name"
@@ -21,14 +28,7 @@ ActiveRecord::Schema.define(version: 20131023035147) do
     t.datetime "updated_at"
   end
 
-  create_table "scores", force: true do |t|
-    t.string   "player"
-    t.integer  "rank"
-    t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "scores", ["game_id"], name: "index_scores_on_game_id"
+# Could not dump table "scores" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

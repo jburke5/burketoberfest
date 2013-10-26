@@ -20,34 +20,38 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
   end
-
+  
+  def new_win
+    @game = Game.find(params[:game_id])
+    @rank = 1
+    @events = Event.find_all_by_time(4)
+  end
+  
+  def new_loss
+    @game = Game.find(params[:game_id])
+    @rank = 2
+    @events = Event.find_all_by_time(4)
+  end
+  
   # POST /games
   # POST /games.json
   def create
     @game = Game.new(game_params)
 
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @game }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.save
+      redirect_to @game, notice: 'Game was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /games/1
   # PATCH/PUT /games/1.json
   def update
-    respond_to do |format|
-      if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.update(game_params)
+      redirect_to @game, notice: 'Game was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
@@ -55,10 +59,7 @@ class GamesController < ApplicationController
   # DELETE /games/1.json
   def destroy
     @game.destroy
-    respond_to do |format|
-      format.html { redirect_to games_url }
-      format.json { head :no_content }
-    end
+    redirect_to games_url
   end
 
   private
