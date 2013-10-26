@@ -1,20 +1,25 @@
 class Event < ActiveRecord::Base
   
-  PARTY_START_TIME=14
+  PARTY_START_TIME=12
   
   def votes
-    previous_winner = DateTime.new(2013,10,26,PARTY_START_TIME,0,0,"-4")
-    current_winner = previous_winner
-    total = 0
+    previous_winner = Array.new(Game.all.size+Game.first.id,DateTime.new(2013,10,26,PARTY_START_TIME,0,0,"-4"))
+    current_winner = Array.new(Game.all.size+Game.first.id,DateTime.new(2013,10,26,PARTY_START_TIME,0,0,"-4"))
+    log = "#{id} "#0
+    points=0
     Score.all.sort{|x,y| x.created_at <=> y.created_at}.each do |score|
       if score.winner? #new winner!
-        previous_winner = current_winner
-        current_winner = score.created_at.getlocal
+        previous_winner[score.game_id] = current_winner[score.game_id]
+        current_winner[score.game_id] = score.created_at.getlocal
+        log += " currentwinner(#{score.event} #{current_winner[score.game_id].strftime("%l:%M")})"
       end
-      points = score.points_since(previous_winner)
-      total += points if points>0
+      log += " prevwinner(#{previous_winner[score.game_id].strftime("%l:%M")})"
+      log += " eval(#{score.created_at.getlocal.strftime("%l:%M")})\n"
+      
+      points += score.points_since(previous_winner[score.game_id]) if score.event == id
+      log+= " points(#{points}) from(#{previous_winner[score.game_id].strftime("%l:%M")})\n"
     end
-    total
+    points
   end
   
   def self.next_event_hour
