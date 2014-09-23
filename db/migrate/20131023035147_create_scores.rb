@@ -4,6 +4,7 @@ class CreateScores < ActiveRecord::Migration
       t.string :player
       t.integer :rank
       t.references :game, index: true
+      t.references :partyPerson, index: true
 
       t.timestamps
     end

@@ -1,0 +1,27 @@
+<h1>PartyPerson#index</h1>
+
+<table>
+<thead>
+<tr>
+<th>People</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<% @people.each do |partyPerson| %>
+<tr>
+<td><%= partyPerson.name %> IP: <%=partyPerson.ip%> : </td>
+<td><%= link_to 'Show', partyPerson %></td>
+<td><%= link_to 'Edit', party_person_edit_path(partyPerson) %></td>
+<td><%= link_to 'Destroy', partyPerson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', party_person_new_path %>

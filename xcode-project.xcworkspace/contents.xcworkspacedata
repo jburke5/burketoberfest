@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:config/routes.rb">
+   </FileRef>
+   <Group
+      location = "group:app/controllers"
+      name = "controllers">
+      <FileRef
+         location = "group:application_controller.rb">
+      </FileRef>
+      <Group
+         location = "group:concerns"
+         name = "concerns">
+      </Group>
+      <FileRef
+         location = "group:events_controller.rb">
+      </FileRef>
+      <FileRef
+         location = "group:games_controller.rb">
+      </FileRef>
+      <FileRef
+         location = "group:scores_controller.rb">
+      </FileRef>
+      <FileRef
+         location = "group:party_person_controller.rb">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:app/models"
+      name = "models">
+      <FileRef
+         location = "group:party_person.rb">
+      </FileRef>
+      <Group
+         location = "group:concerns"
+         name = "concerns">
+      </Group>
+      <FileRef
+         location = "group:event.rb">
+      </FileRef>
+      <FileRef
+         location = "group:game.rb">
+      </FileRef>
+      <FileRef
+         location = "group:score.rb">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:app/views"
+      name = "views">
+      <Group
+         location = "group:party_person"
+         name = "party_person">
+         <FileRef
+            location = "group:create.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:destroy.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:edit.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:new.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:show.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:update.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:_form.html.erb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:events"
+         name = "events">
+         <FileRef
+            location = "group:_form.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:edit.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.json.jbuilder">
+         </FileRef>
+         <FileRef
+            location = "group:new.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:show.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:show.json.jbuilder">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:games"
+         name = "games">
+         <FileRef
+            location = "group:_form.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:edit.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.json.jbuilder">
+         </FileRef>
+         <FileRef
+            location = "group:new.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:new_loss.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:new_win.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:show.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:show.json.jbuilder">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:layouts"
+         name = "layouts">
+         <FileRef
+            location = "group:application.html.erb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:scores"
+         name = "scores">
+         <FileRef
+            location = "group:_form.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:_score.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:index.html.erb">
+         </FileRef>
+         <FileRef
+            location = "group:new.html.erb">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:db"
+      name = "db">
+      <FileRef
+         location = "group:development.sqlite3">
+      </FileRef>
+      <Group
+         location = "group:migrate"
+         name = "migrate">
+         <FileRef
+            location = "group:20131023032512_create_games.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20131023035147_create_scores.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20131026145006_create_events.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20131026145442_add_event_to_score.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20131026183526_add_description_to_event.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20131026192554_remove_remove_events_and_scores.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20140923012301_create_party_people.rb">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:schema.rb">
+      </FileRef>
+      <FileRef
+         location = "group:seeds.rb">
+      </FileRef>
+      <FileRef
+         location = "group:test.sqlite3">
+      </FileRef>
+   </Group>
+</Workspace>
