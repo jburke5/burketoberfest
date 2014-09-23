@@ -1,17 +1,10 @@
 Burketoberfest::Application.routes.draw do
   
-  get "party_person/show"
-  get "party_person/index"
-  get "party_person/new"
-  get "party_person/edit"
-  post "party_person/create"
-  get "party_person/update"
-  get "party_person/destroy"
   resources :events do
   end
   get 'events/next/:time', to: 'events#next'
   
-  resources :party_person do
+  resources :party_people do
       resources :scores
   end
 

@@ -15,7 +15,7 @@
 <tr>
 <td><%= partyPerson.name %> IP: <%=partyPerson.ip%> : </td>
 <td><%= link_to 'Show', partyPerson %></td>
-<td><%= link_to 'Edit', party_person_edit_path(partyPerson) %></td>
+<td><%= link_to 'Edit', edit_party_person_path(partyPerson) %></td>
 <td><%= link_to 'Destroy', partyPerson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
 <% end %>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Person', party_person_new_path %>
+<%= link_to 'New Person', new_party_person_path %>
